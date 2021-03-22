@@ -23,9 +23,8 @@ public class KafkapublishApplication {
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {
-            System.out.println("start");
-
-            Arrays.asList(args).forEach(a -> System.out.println(a));
+            System.out.println("[[start]]");
+            Arrays.asList(args.getSourceArgs()).forEach(a -> System.out.println(a));
 
             List<String> list = new ArrayList<String>();
             list.add("{\"id\":\"206800996\",\"title\":\"노트북\",\"region\":\"성남시 분당구 판교동\"}");
