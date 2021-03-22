@@ -23,10 +23,10 @@ public class KafkapublishApplication {
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {
-            System.out.println("[[start]]");
+            System.out.println("[[[start]]]");
             Arrays.asList(args.getSourceArgs()).forEach(a -> {
-//                System.out.println(a)
-                ksm.sendMessage(a);
+                System.out.println(a);
+//                ksm.sendMessage(a);
             });
 
 //            List<String> list = new ArrayList<String>();
@@ -41,6 +41,8 @@ public class KafkapublishApplication {
 //            for (int i = 0; i < 10; i++) {
 //                ksm.sendMessage("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 //            }
+
+
         };
     }
 }
