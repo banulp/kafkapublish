@@ -25,8 +25,8 @@ public class KafkapublishApplication {
         return args -> {
             System.out.println("[[[start]]]");
             Arrays.asList(args.getSourceArgs()).forEach(a -> {
-                System.out.println(a);
-//                ksm.sendMessage(a);
+//                System.out.println(a);
+                ksm.sendMessage(a);
             });
 
 //            List<String> list = new ArrayList<String>();
