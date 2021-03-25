@@ -51,8 +51,8 @@ public class Dgweb {
                     go = true;
                 }
                 if (temp.contains("article-title")) {
-//                    title = temp;
-                    title = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
+                    title = temp;
+//                    title = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("nickname")) {
 //                    nickname = temp;
