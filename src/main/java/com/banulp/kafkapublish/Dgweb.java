@@ -55,12 +55,12 @@ public class Dgweb {
 //                    title = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("nickname")) {
-//                    nickname = temp;
-                    nickname = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
+                    nickname = temp;
+//                    nickname = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("\"region-name")) {
-//                    region = temp;
-                    region = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
+                    region = temp;
+//                    region = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
             }
 
