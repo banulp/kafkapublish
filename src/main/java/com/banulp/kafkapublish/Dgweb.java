@@ -23,9 +23,9 @@ public class Dgweb {
     @Autowired
     private KafkaSendMessage ksm;
 
-    public void poll(int i) throws InterruptedException {
+    public void poll(String i) {
 
-        int index = i;
+        int index = Integer.valueOf(i);
 
         while(true) {
             index += 1;
@@ -34,7 +34,7 @@ public class Dgweb {
 
     }
 
-    public void sendPublishMessage(int i) throws InterruptedException {
+    public void sendPublishMessage(int i) {
 //            Thread.sleep(5000);
 
         String index = String.valueOf(i);

@@ -26,9 +26,10 @@ public class KafkapublishApplication {
             System.out.println("[start]");
             Arrays.asList(args.getSourceArgs()).forEach(a -> {
                 System.out.println(a);
+                dgweb.poll(a);
 //                ksm.sendMessage(a);
             });
-            dgweb.poll(211723526);
+
         };
     }
 }
