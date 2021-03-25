@@ -25,3 +25,11 @@ mvn clean package -Dmaven.test.skip=true
 
 #!/bin/bash
 java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/kafkapublish-0.0.1-SNAPSHOT.jar
+
+wget -q -O - https://www.daangn.com/articles/211788053 | grep -e '무료나눔\|article-title\|nickname\|"region-name'
+
+banulp@banulp:~/myToy/delme$ wget -q -O - https://www.daangn.com/articles/211788053 | grep -e '무료나눔\|article-title\|nickname\|"region-name'
+<div id="nickname">일타한</div>
+<div id="region-name">광산구 신가동</div>
+<h1 property="schema:name" id="article-title" style="margin-top:0px;">모니터 무료로 가져가세요</h1>
+무료나눔

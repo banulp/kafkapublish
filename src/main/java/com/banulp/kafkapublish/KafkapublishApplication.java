@@ -24,11 +24,11 @@ public class KafkapublishApplication {
     public ApplicationRunner applicationRunner() {
         return args -> {
             System.out.println("[start]");
-//            Arrays.asList(args.getSourceArgs()).forEach(a -> {
-////                System.out.println(a);
+            Arrays.asList(args.getSourceArgs()).forEach(a -> {
+                System.out.println(a);
 //                ksm.sendMessage(a);
-//            });
-            dgweb.pollAndSM();
+            });
+            dgweb.poll(211723526);
         };
     }
 }
