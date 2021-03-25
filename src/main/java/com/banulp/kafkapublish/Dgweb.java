@@ -1,7 +1,6 @@
 package com.banulp.kafkapublish;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +8,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class Dgweb {
@@ -65,16 +62,15 @@ public class Dgweb {
 //                    region = temp;
                     region = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
-
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, title, nickname, region);
-//                System.out.println(msg);
-
-                if (go) {
-                    System.out.println(msg);
-                    // publish
-                    ksm.sendMessage(msg);
-                }
             }
+
+            if (go) {
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, title, nickname, region);
+                System.out.println(msg);
+                // publish
+                ksm.sendMessage(msg);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
