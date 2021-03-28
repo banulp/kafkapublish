@@ -12,8 +12,11 @@ import java.net.URL;
 @Service
 public class Dgweb {
 
+    private final int PAGE_GAP = 5;
+
     private int fromIdx = 0;
 
+    private int emptyPageCnt = 0;
     @Autowired
     public ConfigurableEnvironment env;
 
@@ -21,19 +24,27 @@ public class Dgweb {
     private KafkaSendMessage ksm;
 
     public void poll(String i) {
-
         int index = Integer.valueOf(i);
-
-        while(true) {
+        int emptyPageCnt = 0;
+        while (true) {
             index += 1;
+
             sendPublishMessage(index);
+            if (emptyPageCnt > PAGE_GAP) {
+                try {
+                    System.out.println("in emptyPageCnt : " + index);
+                    Thread.sleep(5000);
+                    index -= PAGE_GAP;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }
 
     public void sendPublishMessage(int i) {
-//            Thread.sleep(5000);
-
+        System.out.println("get page : " + i);
         String index = String.valueOf(i);
         String title = "title";
         String nickname = "nickname";
@@ -43,6 +54,7 @@ public class Dgweb {
         try {
             URL url = new URL("https://www.daangn.com/articles/" + index);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            // java.io.FileNotFoundException
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String temp;
 
@@ -72,6 +84,7 @@ public class Dgweb {
             }
 
         } catch (Exception e) {
+            emptyPageCnt += 1;
             e.printStackTrace();
         }
     }
