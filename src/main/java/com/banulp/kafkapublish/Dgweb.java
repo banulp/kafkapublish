@@ -17,7 +17,7 @@ public class Dgweb {
 
     private int fromIdx = 0;
 
-    private static int emptyPageCnt = 0;
+    private int emptyPageCnt = 0;
 
     @Autowired
     public ConfigurableEnvironment env;
@@ -27,7 +27,7 @@ public class Dgweb {
 
     public void poll(String i) {
         int index = Integer.valueOf(i);
-        int emptyPageCnt = 0;
+
         while (true) {
             index += 1;
 
@@ -62,7 +62,6 @@ public class Dgweb {
         try {
             URL url = new URL("https://www.daangn.com/articles/" + index);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            // java.io.FileNotFoundException
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String temp;
 
@@ -72,15 +71,12 @@ public class Dgweb {
                 }
                 if (temp.contains("article-title")) {
                     title = temp;
-//                    title = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("nickname")) {
                     nickname = temp;
-//                    nickname = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("\"region-name")) {
                     region = temp;
-//                    region = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
             }
 
