@@ -17,7 +17,7 @@ public class Dgweb {
 
     private int fromIdx = 0;
 
-    private int emptyPageCnt = 0;
+    private static int emptyPageCnt = 0;
 
     @Autowired
     public ConfigurableEnvironment env;
