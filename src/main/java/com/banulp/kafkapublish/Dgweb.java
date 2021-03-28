@@ -30,16 +30,12 @@ public class Dgweb {
 
         while (true) {
             index += 1;
-
-            System.out.println("before sendPublishMessage : " + emptyPageCnt);
-
+//            System.out.println("before sendPublishMessage : " + emptyPageCnt);
             sendPublishMessage(index);
-
-            System.out.println("after sendPublishMessage : " + emptyPageCnt);
-
+//            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {
-                    System.out.println("in emptyPageCnt : " + index);
+//                    System.out.println("in emptyPageCnt : " + index);
                     Thread.sleep(5000);
                     index -= PAGE_GAP;
                     emptyPageCnt = 0;
@@ -52,7 +48,7 @@ public class Dgweb {
     }
 
     public void sendPublishMessage(int i) {
-        System.out.println("get page : " + i);
+//        System.out.println("get page : " + i);
         String index = String.valueOf(i);
         String title = "title";
         String nickname = "nickname";
@@ -66,12 +62,11 @@ public class Dgweb {
 
             // 성공하면 다시 0
             if (emptyPageCnt != 0) {
-                System.out.println("성공하면 다시 0");
+//                System.out.println("성공하면 다시 0");
                 emptyPageCnt = 0;
             }
 
             String temp;
-
             while ((temp = br.readLine()) != null) {
                 if (temp.contains("article-price-nanum")) {
                     go = true;
@@ -89,15 +84,15 @@ public class Dgweb {
 
             if (go) {
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, h2t(title), h2t(nickname), h2t(region));
-                System.out.println(msg);
+//                System.out.println(msg);
                 // publish
                 ksm.sendMessage(msg);
             }
 
         } catch (Exception e) {
             emptyPageCnt += 1;
-            System.out.println("emptyPageCnt : " + emptyPageCnt);
-            e.printStackTrace();
+//            System.out.println("emptyPageCnt : " + emptyPageCnt);
+//            e.printStackTrace();
         }
 
     }
