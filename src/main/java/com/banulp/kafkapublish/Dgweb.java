@@ -62,6 +62,10 @@ public class Dgweb {
         try {
             URL url = new URL("https://www.daangn.com/articles/" + index);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            // 성공하면 다시 0
+            emptyPageCnt = 0;
+
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String temp;
 
