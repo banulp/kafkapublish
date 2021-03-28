@@ -1,5 +1,6 @@
 package com.banulp.kafkapublish;
 
+import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Service;
@@ -77,7 +78,7 @@ public class Dgweb {
             }
 
             if (go) {
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, title, nickname, region);
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, h2t(title), h2t(nickname), h2t(region));
                 System.out.println(msg);
                 // publish
                 ksm.sendMessage(msg);
@@ -87,6 +88,10 @@ public class Dgweb {
             emptyPageCnt += 1;
             e.printStackTrace();
         }
+    }
+
+    public static String h2t(String html) {
+        return Jsoup.parse(html).text();
     }
 
 }
