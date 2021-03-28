@@ -31,7 +31,12 @@ public class Dgweb {
         while (true) {
             index += 1;
 
+            System.out.println("before sendPublishMessage : " + emptyPageCnt);
+
             sendPublishMessage(index);
+
+            System.out.println("after sendPublishMessage : " + emptyPageCnt);
+
             if (emptyPageCnt > PAGE_GAP) {
                 try {
                     System.out.println("in emptyPageCnt : " + index);
