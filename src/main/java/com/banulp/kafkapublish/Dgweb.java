@@ -63,6 +63,13 @@ public class Dgweb {
             URL url = new URL("https://www.daangn.com/articles/" + index);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            // 성공하면 다시 0
+            if (emptyPageCnt != 0) {
+                System.out.println("성공하면 다시 0");
+                emptyPageCnt = 0;
+            }
+
             String temp;
 
             while ((temp = br.readLine()) != null) {
@@ -93,9 +100,6 @@ public class Dgweb {
             e.printStackTrace();
         }
 
-        // 성공하면 다시 0
-        System.out.println("성공하면 다시 0");
-        emptyPageCnt = 0;
     }
 
     public static String h2t(String html) {
