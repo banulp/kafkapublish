@@ -18,6 +18,7 @@ public class Dgweb {
     private int fromIdx = 0;
 
     private int emptyPageCnt = 0;
+
     @Autowired
     public ConfigurableEnvironment env;
 
@@ -36,6 +37,7 @@ public class Dgweb {
                     System.out.println("in emptyPageCnt : " + index);
                     Thread.sleep(5000);
                     index -= PAGE_GAP;
+                    emptyPageCnt = 0;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -86,6 +88,7 @@ public class Dgweb {
 
         } catch (Exception e) {
             emptyPageCnt += 1;
+            System.out.println("emptyPageCnt : " + emptyPageCnt);
             e.printStackTrace();
         }
     }
