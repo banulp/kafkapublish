@@ -27,8 +27,8 @@ public class KafkapublishApplication {
             System.out.println("[start]");
             Arrays.asList(args.getSourceArgs()).forEach(a -> {
                 System.out.println("start with : " + a);
-//                dgweb.poll(a);
-                dgwebJSoup.poll(a);
+                dgweb.poll(a);
+//                dgwebJSoup.poll(a);
 //                ksm.sendMessage(a);
             });
 

@@ -44,7 +44,7 @@ public class DgwebJSoup {
     }
 
     public void sendPublishMessage(int i) {
-        System.out.println("get page : " + i);
+//        System.out.println("get page : " + i);
         String index = String.valueOf(i);
 
         try {
