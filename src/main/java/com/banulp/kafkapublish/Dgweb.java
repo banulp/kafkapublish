@@ -78,7 +78,11 @@ public class Dgweb {
                     nickname = temp;
                 }
                 if (temp.contains("\"region-name")) {
-                    region = temp;
+                    if (temp.contains("분당구")) {
+                        region = temp;
+                    } else {
+                        return;
+                    }
                 }
             }
 
