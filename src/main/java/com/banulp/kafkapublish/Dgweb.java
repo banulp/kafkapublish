@@ -48,7 +48,7 @@ public class Dgweb {
     }
 
     public void sendPublishMessage(int i) {
-        System.out.println("get page : " + i);
+//        System.out.println("get page : " + i);
         String index = String.valueOf(i);
         String title = "title";
         String region = "region";
@@ -69,6 +69,9 @@ public class Dgweb {
             while ((temp = br.readLine()) != null) {
                 if (temp.contains("article-price-nanum")) {
                     go = true;
+                }
+                if (temp.contains("article-price")) {
+                    return;
                 }
                 if (temp.contains("article-title")) {
                     title = temp;
