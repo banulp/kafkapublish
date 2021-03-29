@@ -1,10 +1,14 @@
 package com.banulp.kafkapublish;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -19,7 +23,6 @@ class KafkapublishApplicationTests {
         // 무료나눔\|article-title\|nickname\|"region-name
         String index = "211853955";
         String title = "title";
-        String nickname = "nickname";
         String region = "region";
         boolean go = false;
 
@@ -36,15 +39,11 @@ class KafkapublishApplicationTests {
                 }
                 if (temp.contains("article-title")) {
 //                    title = temp;
-                    title = temp.substring(temp.indexOf(">")+1, temp.lastIndexOf("<"));
-                }
-                if (temp.contains("nickname")) {
-//                    nickname = temp;
-                    nickname = temp.substring(temp.indexOf(">")+1, temp.lastIndexOf("<"));
+                    title = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
                 if (temp.contains("\"region-name")) {
 //                    region = temp;
-                    region = temp.substring(temp.indexOf(">")+1, temp.lastIndexOf("<"));
+                    region = temp.substring(temp.indexOf(">") + 1, temp.lastIndexOf("<"));
                 }
 
 //                System.out.println(go);
@@ -53,15 +52,34 @@ class KafkapublishApplicationTests {
 //                System.out.println(nickname);
 //                System.out.println(region);
 
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"nickname\":\"%s\",\"region\":\"%s\"}", index, title, nickname, region);
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, title, region);
 
                 System.out.println(msg);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
+    @Test
+    void contextLoadsJsoup() {
+
+        String index = "213652663";
+//        String index = "21365266300";
+        try {
+            Document doc = Jsoup.connect("https://www.daangn.com/articles/" + index).get();
+
+            Element element = doc.getElementById("article-price-nanum");
+            String region = doc.getElementById("region-name").text();
+            if (element != null && region.contains("분당구")) {
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
+                System.out.println(msg);
+            }
+
+        } catch (IOException e) {
+            System.out.println("EXCEPTION!!");
+            e.printStackTrace();
+        }
+
+    }
 }

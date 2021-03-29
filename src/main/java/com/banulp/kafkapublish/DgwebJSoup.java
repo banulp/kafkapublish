@@ -1,17 +1,13 @@
 package com.banulp.kafkapublish;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 @Service
-public class Dgweb {
+public class DgwebJSoup {
 
     private final int PAGE_GAP = 5;
 
@@ -50,14 +46,9 @@ public class Dgweb {
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
         String index = String.valueOf(i);
-        String title = "title";
-        String region = "region";
-        boolean go = false;
 
         try {
-            URL url = new URL("https://www.daangn.com/articles/" + index);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            Document doc = Jsoup.connect("https://www.daangn.com/articles/" + index).get();
 
             // 성공하면 다시 0
             if (emptyPageCnt != 0) {
@@ -65,25 +56,8 @@ public class Dgweb {
                 emptyPageCnt = 0;
             }
 
-            String temp;
-            while ((temp = br.readLine()) != null) {
-                if (temp.contains("article-price-nanum")) {
-                    go = true;
-                }
-                if (temp.contains("article-title")) {
-                    title = temp;
-                }
-                if (temp.contains("\"region-name")) {
-                    if (temp.contains("분당구")) {
-                        region = temp;
-                    } else {
-                        return;
-                    }
-                }
-            }
-
-            if (go) {
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, h2t(title), h2t(region));
+            if ( doc.getElementById("article-price-nanum") != null && doc.getElementById("region-name").text().contains("분당구")) {
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, doc.getElementById("article-title"), doc.getElementById("region-name").text());
 //                System.out.println(msg);
                 // publish
                 ksm.sendMessage(msg);
@@ -95,10 +69,6 @@ public class Dgweb {
 //            e.printStackTrace();
         }
 
-    }
-
-    public static String h2t(String html) {
-        return Jsoup.parse(html).text();
     }
 
 }

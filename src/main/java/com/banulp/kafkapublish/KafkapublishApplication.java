@@ -6,15 +6,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 public class KafkapublishApplication {
 
     @Autowired
     private Dgweb dgweb;
+
+    @Autowired
+    private DgwebJSoup dgwebJSoup;
 
     public static void main(String[] args) {
         SpringApplication.run(KafkapublishApplication.class, args);
@@ -26,7 +27,8 @@ public class KafkapublishApplication {
             System.out.println("[start]");
             Arrays.asList(args.getSourceArgs()).forEach(a -> {
                 System.out.println("start with : " + a);
-                dgweb.poll(a);
+//                dgweb.poll(a);
+                dgwebJSoup.poll(a);
 //                ksm.sendMessage(a);
             });
 
