@@ -57,7 +57,7 @@ public class DgwebJSoup {
             }
 
             if ( doc.getElementById("article-price-nanum") != null && doc.getElementById("region-name").text().contains("분당구")) {
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, doc.getElementById("article-title"), doc.getElementById("region-name").text());
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, doc.getElementById("article-title").text(), doc.getElementById("region-name").text());
                 System.out.println(msg);
                 // publish
                 ksm.sendMessage(msg);
