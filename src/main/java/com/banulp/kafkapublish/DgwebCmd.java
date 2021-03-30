@@ -9,10 +9,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
 
 @Service
-public class Dgweb {
+public class DgwebCmd {
 
     private final int PAGE_GAP = 5;
 
@@ -51,13 +50,43 @@ public class Dgweb {
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
         if (i % 100 == 0) {
-            System.out.println( DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
+            System.out.println("index print of " + " : " + i);
         }
 
         String index = String.valueOf(i);
         String title = "title";
         String region = "region";
         boolean go = false;
+
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("bash", "-c", "wget -q -O - https://www.daangn.com/articles/" + index + " | grep '무료나눔'");
+        try {
+            Process process = processBuilder.start();
+            StringBuilder output = new StringBuilder();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line + "\n");
+            }
+
+            int exitVal = process.waitFor();
+            if (exitVal == 0) {
+//                System.out.println("Success!");
+//                System.out.println(output);
+                System.exit(0);
+            } else {
+                //abnormal...
+            }
+
+            if(output.toString().length() != 0){
+                go = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         try {
             URL url = new URL("https://www.daangn.com/articles/" + index);
