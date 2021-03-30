@@ -36,16 +36,16 @@ banulp@banulp:~/myToy/delme$ wget -q -O - https://www.daangn.com/articles/211788
 
 한자리수 작게
 
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 0 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 1 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 2 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 3 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 4 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 5 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 6 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 7 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 8 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21416710 9 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 0 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 1 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 2 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 3 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 4 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 5 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 6 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 7 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 8 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21417710 9 &
 
 
 

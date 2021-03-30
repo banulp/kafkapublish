@@ -25,14 +25,14 @@ public class KafkapublishApplication {
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {
-//                dgweb.poll(a);
             System.out.println("[start]");
             List<String> argList = Arrays.asList(args.getSourceArgs());
 
             System.out.println(argList.get(0));
             System.out.println(argList.get(1));
 
-            dgwebJSoup.poll(argList.get(0), argList.get(1));
+            dgweb.poll(argList.get(0));
+//            dgwebJSoup.poll(argList.get(0), argList.get(1));
         };
     }
 }
