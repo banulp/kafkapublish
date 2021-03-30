@@ -70,9 +70,6 @@ public class Dgweb {
                 if (temp.contains("article-price-nanum")) {
                     go = true;
                 }
-                if (temp.contains("article-price")) {
-                    return;
-                }
                 if (temp.contains("article-title")) {
                     title = temp;
                 }

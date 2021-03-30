@@ -82,4 +82,19 @@ class KafkapublishApplicationTests {
         }
 
     }
+
+
+    @Test
+    void indexTest() {
+        poll("5237", "1");
+    }
+
+    public void poll(String i, String postfix) {
+        int index = Integer.valueOf(i);
+        for( int j = 0 ; j < 20; j++) {
+            index += 1;
+            System.out.println(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
+        }
+    }
+
 }

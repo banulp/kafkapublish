@@ -21,13 +21,19 @@ public class DgwebJSoup {
     @Autowired
     private KafkaSendMessage ksm;
 
-    public void poll(String i) {
+    public void poll(String i, String postfix) {
         int index = Integer.valueOf(i);
 
         while (true) {
             index += 1;
 //            System.out.println("before sendPublishMessage : " + emptyPageCnt);
-            sendPublishMessage(index);
+
+            if (index % 100 == 0) {
+                System.out.println("index print of " + postfix + " : " + index);
+            }
+
+//            sendPublishMessage(index);
+            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
 //            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {
@@ -56,7 +62,7 @@ public class DgwebJSoup {
                 emptyPageCnt = 0;
             }
 
-            if ( doc.getElementById("article-price-nanum") != null && doc.getElementById("region-name").text().contains("분당구")) {
+            if (doc.getElementById("article-price-nanum") != null && doc.getElementById("region-name").text().contains("분당구")) {
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, doc.getElementById("article-title").text(), doc.getElementById("region-name").text());
                 System.out.println(msg);
                 // publish

@@ -33,3 +33,19 @@ banulp@banulp:~/myToy/delme$ wget -q -O - https://www.daangn.com/articles/211788
 <div id="region-name">광산구 신가동</div>
 <h1 property="schema:name" id="article-title" style="margin-top:0px;">모니터 무료로 가져가세요</h1>
 무료나눔
+
+
+
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 0 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 1 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 2 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 3 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 4 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 5 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 6 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 7 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 8 &
+nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 213284500 9 &
+
+
+
