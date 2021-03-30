@@ -49,6 +49,10 @@ public class Dgweb {
 
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
+        if (i % 100 == 0) {
+            System.out.println("index print of " + " : " + i);
+        }
+
         String index = String.valueOf(i);
         String title = "title";
         String region = "region";
