@@ -1,5 +1,6 @@
 package com.banulp.kafkapublish;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
