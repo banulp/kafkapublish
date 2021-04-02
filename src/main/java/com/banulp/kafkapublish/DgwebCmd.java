@@ -21,13 +21,14 @@ public class DgwebCmd {
     @Autowired
     private KafkaSendMessage ksm;
 
-    public void poll(String i) {
+    public void poll(String i, String postfix) {
         int index = Integer.valueOf(i);
 
         while (true) {
             index += 1;
 //            System.out.println("before sendPublishMessage : " + emptyPageCnt);
-            sendPublishMessage(index);
+//            sendPublishMessage(index);
+            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
 //            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {

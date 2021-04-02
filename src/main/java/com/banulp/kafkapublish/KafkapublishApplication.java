@@ -32,11 +32,12 @@ public class KafkapublishApplication {
             List<String> argList = Arrays.asList(args.getSourceArgs());
 
             System.out.println(argList.get(0));
-//            System.out.println(argList.get(1));
+            System.out.println(argList.get(1));
 
 //            dgweb.poll(argList.get(0));
 //            dgwebJSoup.poll(argList.get(0), argList.get(1));
-            dgwebCmd.poll(argList.get(0));
+//            dgwebCmd.poll(argList.get(0));
+            dgwebCmd.poll(argList.get(0), argList.get(1));
         };
     }
 }
