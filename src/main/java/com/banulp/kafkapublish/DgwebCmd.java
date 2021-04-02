@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
 
 @Service
 public class DgwebCmd {
@@ -45,7 +46,7 @@ public class DgwebCmd {
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
         if (i % 100 == 0) {
-            System.out.println("index print of " + " : " + i);
+            System.out.println( DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
         }
 
         String index = String.valueOf(i);
