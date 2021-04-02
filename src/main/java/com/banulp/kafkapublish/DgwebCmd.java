@@ -77,11 +77,11 @@ public class DgwebCmd {
             // -1, 0, 1
             String result = output.toString();
             System.out.println("result is " + result+ ".");
-            if (result.equals("OK")) {
+            if (result.contains("OK")) {
                 System.out.println("OK action");
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
                 ksm.sendMessage(msg);
-            } else if (result.equals("EMPTY")) {
+            } else if (result.contains("EMPTY")) {
                 System.out.println("EMPTY action");
                 emptyPageCnt += 1;
             } else {
