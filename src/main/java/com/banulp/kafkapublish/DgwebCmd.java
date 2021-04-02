@@ -78,10 +78,14 @@ public class DgwebCmd {
             String result = output.toString();
             System.out.println("result is " + result);
             if (result.equals("1")) {
+                System.out.println("1 action");
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
                 ksm.sendMessage(msg);
             } else if (result.equals("-1")) {
+                System.out.println("-1 action");
                 emptyPageCnt += 1;
+            } else {
+                System.out.println("0 action");
             }
 
         } catch (Exception e) {
