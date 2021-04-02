@@ -45,9 +45,9 @@ public class DgwebCmd {
     }
 
     public void sendPublishMessage(int i) {
-//        System.out.println("get page : " + i);
+        System.out.println("get page : " + i);
         if (i % 100 == 0) {
-            System.out.println( DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
+            System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
         }
 
         String index = String.valueOf(i);
@@ -76,6 +76,7 @@ public class DgwebCmd {
 
             // -1, 0, 1
             String result = output.toString();
+            System.out.println("result is " + result);
             if (result.equals("1")) {
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
                 ksm.sendMessage(msg);
