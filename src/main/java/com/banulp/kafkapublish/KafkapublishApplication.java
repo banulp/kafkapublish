@@ -18,6 +18,9 @@ public class KafkapublishApplication {
     @Autowired
     private DgwebJSoup dgwebJSoup;
 
+    @Autowired
+    private DgwebCmd dgwebCmd;
+
     public static void main(String[] args) {
         SpringApplication.run(KafkapublishApplication.class, args);
     }
@@ -31,8 +34,9 @@ public class KafkapublishApplication {
             System.out.println(argList.get(0));
             System.out.println(argList.get(1));
 
-            dgweb.poll(argList.get(0));
+//            dgweb.poll(argList.get(0));
 //            dgwebJSoup.poll(argList.get(0), argList.get(1));
+            dgwebCmd.poll(argList.get(0));
         };
     }
 }

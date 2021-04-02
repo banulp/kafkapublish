@@ -49,3 +49,27 @@ nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapubl
 
 
 
+#!/bin/bash
+# 1
+#RESULT="`wget -qO- https://www.daangn.com/articles/214497222`"
+# -1
+#RESULT="`wget -qO- https://www.daangn.com/articles/234497222`"
+# 0 분당구 유료
+#RESULT="`wget -qO- https://www.daangn.com/articles/213815654`"
+# 0 다른데 free
+#RESULT="`wget -qO- https://www.daangn.com/articles/214741465`"
+# 0 숨겨진 글-1
+RESULT="`wget -qO- https://www.daangn.com/articles/213895654`"
+
+
+
+if echo "$RESULT" | grep -q '"article-price"'; then
+echo "0"
+elif echo "$RESULT" | grep -q '<div id="region-name">성남시 분당구'; then
+echo "1"
+elif [ "$RESULT" == "" ]; then
+echo "-1"
+else
+echo "0"
+fi
+
