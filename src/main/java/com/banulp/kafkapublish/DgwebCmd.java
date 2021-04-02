@@ -45,7 +45,7 @@ public class DgwebCmd {
     }
 
     public void sendPublishMessage(int i) {
-        System.out.println("get page : " + i);
+//        System.out.println("get page : " + i);
         if (i % 100 == 0) {
             System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
         }
@@ -76,16 +76,16 @@ public class DgwebCmd {
 
             // -1, 0, 1
             String result = output.toString();
-            System.out.println("result is " + result+ ".");
+//            System.out.println("result is " + result+ ".");
             if (result.contains("OK")) {
-                System.out.println("OK action");
+//                System.out.println("OK action");
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
                 ksm.sendMessage(msg);
             } else if (result.contains("EMPTY")) {
-                System.out.println("EMPTY action");
+//                System.out.println("EMPTY action");
                 emptyPageCnt += 1;
             } else {
-                System.out.println("NORMAL action");
+//                System.out.println("NORMAL action");
             }
 
         } catch (Exception e) {
