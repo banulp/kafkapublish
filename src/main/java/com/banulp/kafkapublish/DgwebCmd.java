@@ -11,7 +11,7 @@ import java.text.DateFormat;
 @Service
 public class DgwebCmd {
 
-    private final int PAGE_GAP = 10;
+    private final int PAGE_GAP = 30;
 
     private int emptyPageCnt = 0;
 
@@ -29,7 +29,7 @@ public class DgwebCmd {
 //            System.out.println("before sendPublishMessage : " + emptyPageCnt);
             sendPublishMessage(index);
 //            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
-            System.out.println("after sendPublishMessage : " + emptyPageCnt);
+//            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {
                     System.out.println("in emptyPageCnt : " + index);
@@ -47,7 +47,7 @@ public class DgwebCmd {
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
         if (i % 100 == 0) {
-            System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
+            System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + " - " + i);
         }
         String index = String.valueOf(i);
         ProcessBuilder processBuilder = new ProcessBuilder();
