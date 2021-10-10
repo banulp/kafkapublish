@@ -26,13 +26,13 @@ public class DgwebCmd {
 
         while (true) {
             index += 1;
-//            System.out.println("before sendPublishMessage : " + emptyPageCnt);
-//            sendPublishMessage(index);
-            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
-//            System.out.println("after sendPublishMessage : " + emptyPageCnt);
+            System.out.println("before sendPublishMessage : " + emptyPageCnt);
+            sendPublishMessage(index);
+//            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
+            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {
-//                    System.out.println("in emptyPageCnt : " + index);
+                    System.out.println("in emptyPageCnt : " + index);
                     Thread.sleep(5000);
                     index -= PAGE_GAP;
                     emptyPageCnt = 0;
@@ -46,7 +46,7 @@ public class DgwebCmd {
 
     public void sendPublishMessage(int i) {
 //        System.out.println("get page : " + i);
-        if (i % 100 == 0) {
+        if (i % 10 == 0) {
             System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
         }
 
