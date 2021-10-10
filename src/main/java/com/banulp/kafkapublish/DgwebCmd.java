@@ -53,7 +53,7 @@ public class DgwebCmd {
         String index = String.valueOf(i);
 
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("bash", "-c", "/home/banulp/kafka/pub/dgarticle.sh " + index);
+        processBuilder.command("bash", "-c", "/home/banulp/toy/dreamcatcher/dreamcather.sh " + index);
         try {
             Process process = processBuilder.start();
             StringBuilder output = new StringBuilder();

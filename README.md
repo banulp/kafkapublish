@@ -36,20 +36,20 @@ banulp@banulp:~/myToy/delme$ wget -q -O - https://www.daangn.com/articles/211788
 
 한자리수 작게
 
-215513600
+https://www.daangn.com/articles/29764900 0
 
+https://www.daangn.com/articles/29764900 0
 
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 0 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 1 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 2 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 3 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 4 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 5 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 6 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 7 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 8 &
-nohup java -jar -Dspring.profiles.active=ubuntu /home/banulp/kafka/pub/kafkapublish/target/kafkapublish-0.0.1-SNAPSHOT.jar 21551360 9 &
-
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 0 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 1 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 2 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 3 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 4 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 5 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 6 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 7 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 8 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 9 &
 
 
 #!/bin/bash
