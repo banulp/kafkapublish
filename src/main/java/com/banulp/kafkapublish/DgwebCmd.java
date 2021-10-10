@@ -45,13 +45,11 @@ public class DgwebCmd {
     }
 
     public void sendPublishMessage(int i) {
-//        System.out.println("get page : " + i);
-        if (i % 10 == 0) {
-            System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
-        }
-
+        System.out.println("get page : " + i);
+//        if (i % 10 == 0) {
+//            System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + "index print of " + " : " + i);
+//        }
         String index = String.valueOf(i);
-
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("bash", "-c", "/home/banulp/toy/dreamcatcher/dreamcather.sh " + index);
         try {

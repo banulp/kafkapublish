@@ -40,6 +40,9 @@ https://www.daangn.com/articles/29764900 0
 
 https://www.daangn.com/articles/29764900 0
 
+
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 297655720 &
+
 nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 0 &
 nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 1 &
 nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 2 &
