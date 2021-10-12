@@ -22,13 +22,16 @@ public class DgwebCmd {
     private KafkaSendMessage ksm;
 
     public void poll(String i, String postfix) {
+
         int index = Integer.valueOf(i);
 
         while (true) {
-            index += 1;
 //            System.out.println("before sendPublishMessage : " + emptyPageCnt);
-            sendPublishMessage(index);
-//            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
+
+//            sendPublishMessage(index);
+            sendPublishMessage(Integer.valueOf(String.valueOf(index) + String.valueOf(postfix)));
+            index += 1;
+
 //            System.out.println("after sendPublishMessage : " + emptyPageCnt);
             if (emptyPageCnt > PAGE_GAP) {
                 try {
@@ -46,7 +49,7 @@ public class DgwebCmd {
 
     public void sendPublishMessage(int i) {
         System.out.println("get page : " + i);
-        if (i % 10 == 0) {
+        if (i % 100 == 0) {
             System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + " - " + i);
         }
         String index = String.valueOf(i);
@@ -77,7 +80,7 @@ public class DgwebCmd {
 //            System.out.println("result is " + result+ ".");
             if (result.contains("성남시")) {
                 String[] split = result.split(">|<");
-                System.out.println(split[2]);
+//                System.out.println(split[2]);
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", split[2]);
                 ksm.sendMessage(msg);
             } else if (result.contains("EMPTY")) {
