@@ -45,8 +45,8 @@ public class DgwebCmd {
     }
 
     public void sendPublishMessage(int i) {
-//        System.out.println("get page : " + i);
-        if (i % 100 == 0) {
+        System.out.println("get page : " + i);
+        if (i % 10 == 0) {
             System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + " - " + i);
         }
         String index = String.valueOf(i);
