@@ -74,10 +74,10 @@ public class DgwebCmd {
 
             // -1, 0, 1
             String result = output.toString();
-//            System.out.println("result is " + result+ ".");
-            if (result.contains("OK")) {
+            System.out.println("result is " + result+ ".");
+            if (result.contains("성남시")) {
 //                System.out.println("OK action");
-                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", "");
+                String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", result);
                 ksm.sendMessage(msg);
             } else if (result.contains("EMPTY")) {
 //                System.out.println("EMPTY action");
