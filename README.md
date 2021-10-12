@@ -41,18 +41,20 @@ https://www.daangn.com/articles/29764900 0
 https://www.daangn.com/articles/29764900 0
 
 
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29822610 0 $
+                                                                                298641563
 nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 297655720 &
 
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 0 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 1 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 2 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 3 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 4 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 5 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 6 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 7 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 8 &
-nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29765200 9 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 0 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 1 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 2 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 3 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 4 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 5 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 6 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 7 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 8 &
+nohup java -jar -Dspring.profiles.active=ubuntu kafkapublish-0.0.1-SNAPSHOT.jar 29864156 9 &
 
 
 #!/bin/bash
