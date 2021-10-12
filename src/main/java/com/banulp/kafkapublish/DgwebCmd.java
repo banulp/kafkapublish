@@ -76,7 +76,7 @@ public class DgwebCmd {
             String result = output.toString();
 //            System.out.println("result is " + result+ ".");
             if (result.contains("성남시")) {
-                String[] split = result.split("/>|</");
+                String[] split = result.split(">|<");
                 System.out.println(split[2]);
                 String msg = String.format("{\"id\":\"%s\",\"title\":\"%s\",\"region\":\"%s\"}", index, "", split[2]);
                 ksm.sendMessage(msg);
