@@ -11,7 +11,7 @@ import java.text.DateFormat;
 @Service
 public class DgwebCmd {
 
-    private final int PAGE_GAP = 30;
+    private final int PAGE_GAP = 10;
 
     private int emptyPageCnt = 0;
 
@@ -48,7 +48,7 @@ public class DgwebCmd {
     }
 
     public void sendPublishMessage(int i) {
-        System.out.println("get page : " + i);
+//        System.out.println("get page : " + i);
         if (i % 100 == 0) {
             System.out.println(DateFormat.getInstance().format(System.currentTimeMillis()) + " - " + i);
         }
